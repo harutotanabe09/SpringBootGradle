@@ -1,0 +1,55 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'java'
+}
+
+task copyDomaResources(type: Sync)  {
+    from sourceSets.main.resources.srcDirs
+    println 'SQLファイルのコピー元'
+    println sourceSets.main.resources.srcDirs
+    into compileJava.destinationDir
+    println 'SQLファイルのコピー先'
+    println compileJava.destinationDir
+    include 'doma.compile.config'
+    include 'META-INF/**/*.sql'
+    include 'META-INF/**/*.script'
+}
+
+compileJava {
+    dependsOn copyDomaResources
+    options.encoding = 'UTF-8'
+}
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'sample'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'org.postgresql:postgresql'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	annotationProcessor 'org.seasar.doma:doma:2.24.0'
+	implementation 'org.seasar.doma:doma:2.24.0'
+	compile group: 'org.seasar.doma.boot', name: 'doma-spring-boot-starter', version: '1.1.1'
+	compile 'com.google.googlejavaformat:google-java-format:1.7'
+}
