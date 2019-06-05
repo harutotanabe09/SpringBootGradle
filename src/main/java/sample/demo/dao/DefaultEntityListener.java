@@ -15,7 +15,7 @@ public class DefaultEntityListener<ENTITY> implements EntityListener<ENTITY> {
 
   @Override
   public void preInsert(ENTITY entity, PreInsertContext<ENTITY> context) {
-    // 二重送信防止チェック
+    // TODO 二重送信防止チェック
     // val expected = DoubleSubmitCheckTokenHolder.getExpectedToken();
     // val actual = DoubleSubmitCheckTokenHolder.getActualToken();
 

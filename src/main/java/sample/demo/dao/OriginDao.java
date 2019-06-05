@@ -4,6 +4,7 @@ import java.util.List;
 import org.seasar.doma.Dao;
 import org.seasar.doma.Select;
 import org.seasar.doma.boot.ConfigAutowireable;
+import org.seasar.doma.jdbc.SelectOptions;
 import sample.demo.entity.WebOrigin;
 
 @ConfigAutowireable
@@ -14,9 +15,9 @@ public interface OriginDao {
    * 全部を取得します。
    *
    * @param criteria
-   * @param options
+   * @param pageable
    * @return
    */
   @Select
-  List<WebOrigin> selectAll(final WebOrigin criteria);
+  List<WebOrigin> selectAll(final WebOrigin criteria, final SelectOptions options);
 }

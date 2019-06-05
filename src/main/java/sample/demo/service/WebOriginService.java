@@ -1,5 +1,6 @@
 package sample.demo.service;
 
+import static sample.demo.util.DomaUtils.*;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,17 +17,15 @@ public class WebOriginService extends BaseTransactionalService {
   OriginDao originDao;
 
   /**
-   * 祝日を複数取得します。
+   * 全件取得します。
    *
    * @param criteria
    * @param pageable
    * @return
    */
   @Transactional(readOnly = true) // 読み取りのみの場合は指定する
-  public List<WebOrigin> findAll(WebOrigin criteria, Pageable pageable) {
-    // TODO ページングを指定する
-    val options = Pageable.NO_LIMIT;
-    return originDao.selectAll(new WebOrigin());
+  public List<WebOrigin> findAll(Pageable pageable) {
+    val options = createSelectOptions(pageable).count();
+    return originDao.selectAll(new WebOrigin(), options);
   }
-
 }

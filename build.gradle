@@ -52,4 +52,6 @@ dependencies {
 	implementation 'org.seasar.doma:doma:2.24.0'
 	compile group: 'org.seasar.doma.boot', name: 'doma-spring-boot-starter', version: '1.1.1'
 	compile 'com.google.googlejavaformat:google-java-format:1.7'
+	compile group: 'org.modelmapper', name: 'modelmapper', version: '2.3.4'
+
 }
