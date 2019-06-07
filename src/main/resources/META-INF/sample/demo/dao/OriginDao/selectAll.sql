@@ -1,10 +1,9 @@
 SELECT
-  *
+    *
 FROM
-  public.web_origins
+    public.web_origins
 WHERE
+    1 = 1
 /*%if criteria.clientId != null */
-  client_id = /* criteria.clientId */1
+AND client_id = /* criteria.clientId */1
 /*%end*/
-ORDER BY
-  client_id ASC

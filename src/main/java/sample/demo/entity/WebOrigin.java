@@ -17,7 +17,7 @@ public class WebOrigin extends DomaDtoImpl {
   // ID
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  Long clientId;
+  int clientId;
 
   // 値
   String value;

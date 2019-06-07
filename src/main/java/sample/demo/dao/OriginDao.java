@@ -1,6 +1,7 @@
 package sample.demo.dao;
 
 import java.util.List;
+import java.util.Optional;
 import org.seasar.doma.Dao;
 import org.seasar.doma.Select;
 import org.seasar.doma.boot.ConfigAutowireable;
@@ -20,4 +21,13 @@ public interface OriginDao {
    */
   @Select
   List<WebOrigin> selectAll(final WebOrigin criteria, final SelectOptions options);
+
+  /**
+   * １件を取得します。
+   *
+   * @param i
+   * @return
+   */
+  @Select
+  Optional<WebOrigin> selectById(long id);
 }

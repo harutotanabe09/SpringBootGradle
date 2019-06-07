@@ -18,6 +18,4 @@ public class BaseController {
   protected ApplicationContext getApplicationContext() {
     return applicationContext;
   }
-
-
 }
