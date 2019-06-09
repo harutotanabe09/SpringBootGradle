@@ -12,7 +12,7 @@ public class BaseController {
   protected ApplicationContext applicationContext;
 
   /**
-   * コンテキストを返します。
+   * コンテキストを返します.
    *
    * @return
    */
@@ -21,7 +21,7 @@ public class BaseController {
   }
 
   /**
-   * メッセージを取得します。
+   * メッセージを取得します.
    *
    * @param key
    * @param args

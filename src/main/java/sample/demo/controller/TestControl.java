@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import io.swagger.annotations.ApiOperation;
 import lombok.val;
 import sample.demo.controller.api.resource.Resource;
 import sample.demo.entity.Pageable;
@@ -41,11 +42,13 @@ public class TestControl extends AbstractRestController {
    * @param userId
    * @return
    */
+  @ApiOperation(value = "get Info", notes = "get info description", httpMethod = "GET",
+      consumes = "application/json", response = WebOrigin.class)
   @GetMapping(value = "/{id}")
   public Resource show(@PathVariable int id) {
     // 1件取得する
     val webOrigin = webOriginService.findById(id);
-    // DIからのインスタンス生成
+    // DIからのインスタンス生成 ★ interfaceを呼びだしている
     Resource resource = resourceFactory.create();
     resource.setData(Arrays.asList(webOrigin.get()));
     // MassegeUtilsを使用してメッセージセット

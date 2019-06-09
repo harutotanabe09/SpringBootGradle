@@ -1,6 +1,6 @@
 package sample.demo.service;
 
-import static sample.demo.util.DomaUtils.*;
+import static sample.demo.util.DomaUtils.createSelectOptions;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

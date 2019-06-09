@@ -8,7 +8,7 @@ import sample.demo.controller.api.resource.Resource;
 public interface ResourceFactory {
 
   /**
-   * インスタンスを作成します。
+   * インスタンスを作成します.
    *
    * @return
    */

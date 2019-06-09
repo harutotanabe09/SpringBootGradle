@@ -25,7 +25,7 @@ public interface OriginDao {
   /**
    * １件を取得します。
    *
-   * @param i
+   * @param id
    * @return
    */
   @Select
