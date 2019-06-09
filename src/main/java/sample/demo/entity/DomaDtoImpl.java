@@ -7,13 +7,14 @@ import org.seasar.doma.Entity;
 import org.seasar.doma.Version;
 import lombok.Getter;
 import lombok.Setter;
+import sample.demo.controller.api.resource.Dto;
 import sample.demo.dao.DefaultEntityListener;
 
 @SuppressWarnings("serial") // SerializeしないとNG
 @Entity(listener = DefaultEntityListener.class) // 自動的にシステム制御項目を更新するためにリスナーを指定する
 @Setter
 @Getter
-public abstract class DomaDtoImpl implements Serializable {
+public abstract class DomaDtoImpl implements Dto, Serializable {
 
   // 作成者
   String createdBy;

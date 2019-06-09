@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Assert;
 import lombok.val;
 import sample.demo.dao.OriginDao;
 import sample.demo.entity.Pageable;
@@ -27,7 +28,6 @@ public class WebOriginService extends BaseTransactionalService {
   @Transactional(readOnly = true) // 読み取りのみの場合は指定する
   public List<WebOrigin> findAll(Pageable pageable) {
     val options = createSelectOptions(pageable).count();
-    // TODO NEWをいれるとIDに入る
     return originDao.selectAll(new WebOrigin(), options);
   }
 
@@ -37,7 +37,8 @@ public class WebOriginService extends BaseTransactionalService {
    * @return
    */
   @Transactional(readOnly = true)
-  public Optional<WebOrigin> findOne(Long id) {
+  public Optional<WebOrigin> findById(int id) {
+    Assert.notNull(id, "id must not be null");
     return originDao.selectById(id);
   }
 
