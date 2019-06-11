@@ -1,6 +1,6 @@
 package sample.demo.controller;
 
-import static sample.demo.base.WebConst.*;
+import static sample.demo.base.WebConst.MESSAGE_SUCCESS;
 import java.util.Arrays;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
