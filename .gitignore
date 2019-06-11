@@ -3,6 +3,10 @@ HELP.md
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 
+### logs
+*.log
+*.class
+
 ### STS ###
 .apt_generated
 .classpath

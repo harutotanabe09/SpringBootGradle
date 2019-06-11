@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.ApiOperation;
 import lombok.val;
+import lombok.extern.slf4j.Slf4j;
 import sample.demo.controller.api.resource.Resource;
 import sample.demo.entity.Pageable;
 import sample.demo.entity.WebOrigin;
@@ -19,6 +20,7 @@ import sample.demo.service.WebOriginService;
 
 @RestController
 @RequestMapping(path = "/api/v1/users", produces = MediaType.APPLICATION_JSON_VALUE)
+@Slf4j
 public class TestControl extends AbstractRestController {
 
   //  プロパティファイルの使い方
@@ -28,8 +30,12 @@ public class TestControl extends AbstractRestController {
   @Autowired
   WebOriginService webOriginService;
 
+  /**
+   * ユーザーを全件取得します。
+   */
   @GetMapping
   public Resource index() {
+    log.info("doSomething start");
     List<WebOrigin> pages = webOriginService.findAll(Pageable.NO_LIMIT);
     Resource resource = resourceFactory.create();
     resource.setData(pages);

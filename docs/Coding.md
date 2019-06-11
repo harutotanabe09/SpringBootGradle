@@ -17,8 +17,8 @@
 ### interfaceクラスのメンバ変数は「static final」が省略された形
 ### 使用時にimport saticで呼び出す
 
-## @Slf4j
-### 以下のloggerを自動生成できる
+## Logging
+### @Slf4jで以下のloggerを自動生成できる
 ### private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(BusinessLogic1.class);
 
 ## NULLチェック
