@@ -6,6 +6,7 @@ HELP.md
 ### logs
 *.log
 *.class
+/bin/
 
 ### STS ###
 .apt_generated
