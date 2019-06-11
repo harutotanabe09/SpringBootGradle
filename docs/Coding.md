@@ -34,4 +34,8 @@
 ## Junit
 ## gradle testで実行。テスト結果はHTMLファイルで出力。(/build/	report/tests/)
 
+## gitignore
+### 一時ファイルを除く
+### logファイルとクラスファイルを除く
+### https://github.com/github/gitignore
 
