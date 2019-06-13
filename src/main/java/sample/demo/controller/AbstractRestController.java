@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import sample.demo.api.resource.DefaultResourceFactoryImpl;
 import sample.demo.util.FunctionNameAware;
 
-/**
- * 基底APIコントローラー.
- */
+/** 基底APIコントローラー. */
 @ResponseStatus(HttpStatus.OK)
 public abstract class AbstractRestController extends BaseController implements FunctionNameAware {
 
@@ -18,6 +16,5 @@ public abstract class AbstractRestController extends BaseController implements F
     return new DefaultResourceFactoryImpl();
   }
 
-  @Autowired
-  protected ResourceFactory resourceFactory;
+  @Autowired protected ResourceFactory resourceFactory;
 }

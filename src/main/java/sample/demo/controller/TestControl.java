@@ -1,17 +1,18 @@
 package sample.demo.controller;
 
 import static sample.demo.base.WebConst.MESSAGE_SUCCESS;
+
+import io.swagger.annotations.ApiOperation;
 import java.util.Arrays;
 import java.util.List;
+import lombok.extern.slf4j.Slf4j;
+import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import io.swagger.annotations.ApiOperation;
-import lombok.val;
-import lombok.extern.slf4j.Slf4j;
 import sample.demo.controller.api.resource.Resource;
 import sample.demo.entity.Pageable;
 import sample.demo.entity.WebOrigin;
@@ -24,15 +25,11 @@ import sample.demo.service.WebOriginService;
 public class TestControl extends AbstractRestController {
 
   //  プロパティファイルの使い方
-  @Autowired
-  private AppProperties property;
+  @Autowired private AppProperties property;
 
-  @Autowired
-  WebOriginService webOriginService;
+  @Autowired WebOriginService webOriginService;
 
-  /**
-   * ユーザーを全件取得します。
-   */
+  /** ユーザーを全件取得します。 */
   @GetMapping
   public Resource index() {
     log.info("doSomething start");
@@ -48,8 +45,12 @@ public class TestControl extends AbstractRestController {
    * @param userId
    * @return
    */
-  @ApiOperation(value = "get Info", notes = "get info description", httpMethod = "GET",
-      consumes = "application/json", response = WebOrigin.class)
+  @ApiOperation(
+      value = "get Info",
+      notes = "get info description",
+      httpMethod = "GET",
+      consumes = "application/json",
+      response = WebOrigin.class)
   @GetMapping(value = "/{id}")
   public Resource show(@PathVariable int id) {
     // 1件取得する
@@ -66,5 +67,4 @@ public class TestControl extends AbstractRestController {
   public String getFunctionName() {
     return "API_TEST";
   }
-
 }

@@ -8,8 +8,7 @@ public class BaseController {
 
   public static final String VALIDATION_ERROR = "ValidationError";
 
-  @Autowired
-  protected ApplicationContext applicationContext;
+  @Autowired protected ApplicationContext applicationContext;
 
   /**
    * コンテキストを返します.

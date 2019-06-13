@@ -35,9 +35,7 @@ public class AuditInfoHolder {
     return AUDIT_DATE_TIME.get();
   }
 
-  /**
-   * 監査情報をクリアします。
-   */
+  /** 監査情報をクリアします。 */
   public static void clear() {
     AUDIT_USER.remove();
     AUDIT_DATE_TIME.remove();

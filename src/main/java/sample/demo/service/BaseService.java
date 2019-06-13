@@ -1,5 +1,3 @@
 package sample.demo.service;
 
-public abstract class BaseService {
-
-}
+public abstract class BaseService {}

@@ -1,8 +1,6 @@
 package sample.demo.util;
 
-/**
- * 機能名のマーカーインターフェース
- */
+/** 機能名のマーカーインターフェース */
 public interface FunctionNameAware {
 
   /**

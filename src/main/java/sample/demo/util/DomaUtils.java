@@ -3,9 +3,7 @@ package sample.demo.util;
 import org.seasar.doma.jdbc.SelectOptions;
 import sample.demo.entity.Pageable;
 
-/**
- * Doma関連ユーティリティ ＊注意＊ import static でインポートして使用する
- */
+/** Doma関連ユーティリティ ＊注意＊ import static でインポートして使用する */
 public class DomaUtils {
   /**
    * SearchOptionsを作成して返します。
