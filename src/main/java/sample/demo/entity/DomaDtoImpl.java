@@ -2,11 +2,11 @@ package sample.demo.entity;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import lombok.Getter;
+import lombok.Setter;
 import org.seasar.doma.Column;
 import org.seasar.doma.Entity;
 import org.seasar.doma.Version;
-import lombok.Getter;
-import lombok.Setter;
 import sample.demo.controller.api.resource.Dto;
 import sample.demo.dao.DefaultEntityListener;
 
@@ -38,5 +38,4 @@ public abstract class DomaDtoImpl implements Dto, Serializable {
   @Version
   @Column(name = "version")
   Integer version;
-
 }

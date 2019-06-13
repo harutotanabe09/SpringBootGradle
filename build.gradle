@@ -1,6 +1,7 @@
 plugins {
 	id 'org.springframework.boot' version '2.1.5.RELEASE'
 	id 'java'
+	id "com.diffplug.gradle.spotless" version "3.23.0"
 }
 
 task copyDomaResources(type: Sync)  {
@@ -40,6 +41,24 @@ configurations {
 
 repositories {
 	mavenCentral()
+}
+
+// 静的コード解析のためのcheckstyleプラグイン
+// gradle checkで実行
+//apply plugin: 'checkstyle'
+
+//def checkstyleVersion = '8.10.1'
+//checkstyle {
+//    configDir = file('src/main/resources')
+//    toolVersion = checkstyleVersion
+//   ignoreFailures = false
+//}
+
+
+spotless {
+    java {
+        googleJavaFormat('1.6')
+    }
 }
 
 dependencies {

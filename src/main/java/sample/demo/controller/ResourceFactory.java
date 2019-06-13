@@ -2,9 +2,7 @@ package sample.demo.controller;
 
 import sample.demo.controller.api.resource.Resource;
 
-/**
- * リソースファクトリ
- */
+/** リソースファクトリ */
 public interface ResourceFactory {
 
   /**

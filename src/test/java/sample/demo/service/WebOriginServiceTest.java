@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.junit.Assert.assertThat;
 import static sample.demo.util.DomaUtils.createSelectOptions;
+
 import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,8 +21,7 @@ import sample.demo.entity.WebOrigin;
 // TODO いずれDBUnit @DbUnitConfiguration(dataSetLoader = CsvDataSetLoader.class)
 public class WebOriginServiceTest {
 
-  @Autowired
-  OriginDao dao;
+  @Autowired OriginDao dao;
 
   @Test
   public void Daoの実行結果を確認() {
@@ -31,5 +31,4 @@ public class WebOriginServiceTest {
     WebOrigin sample = samples.get(0);
     assertThat(sample, notNullValue());
   }
-
 }

@@ -1,12 +1,12 @@
 package sample.demo.dao;
 
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import lombok.val;
 import org.seasar.doma.jdbc.entity.EntityListener;
 import org.seasar.doma.jdbc.entity.PreDeleteContext;
 import org.seasar.doma.jdbc.entity.PreInsertContext;
 import org.seasar.doma.jdbc.entity.PreUpdateContext;
-import lombok.NoArgsConstructor;
-import lombok.val;
-import lombok.extern.slf4j.Slf4j;
 import sample.demo.entity.DomaDtoImpl;
 
 @NoArgsConstructor // コンストラクタが必須のため

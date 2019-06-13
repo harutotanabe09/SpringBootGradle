@@ -39,3 +39,5 @@
 ### logファイルとクラスファイルを除く
 ### https://github.com/github/gitignore
 
+## Swagger (API)
+### swagger-ui.htmlで出力
