@@ -41,3 +41,10 @@
 
 ## Swagger (API)
 ### swagger-ui.htmlで出力
+
+## コード整形
+### gradle spotlessApplyを実行すると可能
+
+## Javadoc
+### gradle javadocを実行して表示
+

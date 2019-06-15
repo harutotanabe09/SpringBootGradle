@@ -42,7 +42,7 @@ public class TestControl extends AbstractRestController {
   /**
    * ユーザーを取得します。
    *
-   * @param userId
+   * @param id ユーザID
    * @return
    */
   @ApiOperation(

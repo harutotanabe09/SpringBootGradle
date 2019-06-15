@@ -21,9 +21,8 @@ public class WebOriginService extends BaseTransactionalService {
   /**
    * 全件取得します。
    *
-   * @param criteria
-   * @param pageable
-   * @return
+   * @param pageable ページング
+   * @return 検索結果
    */
   @Transactional(readOnly = true) // 読み取りのみの場合は指定する
   public List<WebOrigin> findAll(Pageable pageable) {
@@ -34,7 +33,7 @@ public class WebOriginService extends BaseTransactionalService {
   /**
    * 1件を取得します。
    *
-   * @return
+   * @return 検索結果
    */
   @Transactional(readOnly = true)
   public Optional<WebOrigin> findById(int id) {

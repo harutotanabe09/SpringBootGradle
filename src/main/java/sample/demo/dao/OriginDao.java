@@ -15,9 +15,9 @@ public interface OriginDao {
   /**
    * 全部を取得します。
    *
-   * @param criteria
-   * @param pageable
-   * @return
+   * @param criteria 検索条件
+   * @param options ページング
+   * @return 検索結果
    */
   @Select
   List<WebOrigin> selectAll(final WebOrigin criteria, final SelectOptions options);
@@ -25,8 +25,8 @@ public interface OriginDao {
   /**
    * １件を取得します。
    *
-   * @param id
-   * @return
+   * @param id  ユーザID
+   * @return 検索結果
    */
   @Select
   Optional<WebOrigin> selectById(long id);
