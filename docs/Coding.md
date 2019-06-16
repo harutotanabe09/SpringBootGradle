@@ -3,6 +3,9 @@
 ## 各メソッドについて、Abstractのクラスを持つ
 ###   例）Controller、Service
 
+## Entityとシリアライズ
+### 各エンティティには一意になる情報を設定する
+
 ## JavaBeanの実装
 ###   @Lombokを使用し @Getter,@Setterで宣言する
 
@@ -47,4 +50,36 @@
 
 ## Javadoc
 ### gradle javadocを実行して表示
+
+
+###  アプリケーションレイヤー
+
+### アプリケーション層
+
+#### Controller
+リクエストの処理を返す。ビジネスロジックと持たない。
+コントローラからサービスを呼び、サービスがロジックを持つ。
+FatControllerは悪。
+
+#### View
+PDF,Excelなどの出力結果を返す
+
+#### Form
+画面のフォームを表現する。
+JavaBeanで、アノテーションで制約事項（型チェックなど）を記載する
+
+### ドメイン層
+
+#### Entity（人によってはDto）
+DBのテーブルの1レコードを表現する
+例）PersonテーブルのNameやBirthdateなど
+
+#### Dao（人によってはRepository）
+データのアクセス処理を行う。
+例）DBのCRUD処理
+
+#### Service
+業務処理（ビジネスロジック）を行う。
+またServiceからServiceクラスを呼ばない。
+例）Daoの呼び出し
 
