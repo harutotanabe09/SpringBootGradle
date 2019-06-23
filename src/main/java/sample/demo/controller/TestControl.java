@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.enjapan.share.SayHello;
 import io.swagger.annotations.ApiOperation;
 import lombok.val;
 import lombok.extern.slf4j.Slf4j;
@@ -33,7 +34,8 @@ public class TestControl extends AbstractRestController {
   /** ユーザーを全件取得します。 */
   @GetMapping
   public Resource index() {
-    log.info("doSomething start");
+    SayHello say = new SayHello();
+    log.info("doSomething start" + say.isHello());
     List<WebOrigin> pages = webOriginService.findAll(Pageable.NO_LIMIT);
     Resource resource = resourceFactory.create();
     resource.setData(pages);

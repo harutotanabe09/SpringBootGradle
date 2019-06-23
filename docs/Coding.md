@@ -83,3 +83,23 @@ DBのテーブルの1レコードを表現する
 またServiceからServiceクラスを呼ばない。
 例）Daoの呼び出し
 
+### マルチプロジェクト
+
+#### settings.gradle
+シェアするプロジェクト名を記載
+
+includeFlat 'share'
+
+
+#### build.gradle
+シェアする情報を記載
+
+subprojects{
+
+}
+
+dependencies{
+	compile project(":share")
+}
+
+★最後にbuild eclipseを実行

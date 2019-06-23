@@ -30,8 +30,8 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'sample'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '12'
-targetCompatibility = '12'
+sourceCompatibility = 11
+targetCompatibility = 11
 
 configurations {
 	compileOnly {
@@ -41,6 +41,32 @@ configurations {
 
 repositories {
 	mavenCentral()
+}
+
+//apply plugin: com.sample.demo.CodeGenPlugin
+
+allprojects {
+    task hello {
+        doLast {
+            println "I`m ${project.name}."
+        }
+    }
+}
+
+subprojects {
+    apply plugin: "java"
+    apply plugin: "groovy"
+    apply plugin: "idea"
+    apply plugin: "eclipse"
+    apply plugin: "org.springframework.boot"
+    apply plugin: "io.spring.dependency-management"
+    sourceCompatibility = 11
+    targetCompatibility = 11
+    [compileJava, compileTestJava, compileGroovy, compileTestGroovy]*.options*.encoding = "UTF-8"
+    [compileJava, compileTestJava, compileGroovy, compileTestGroovy]*.options*.compilerArgs = ["-Xlint:all"]
+    repositories {
+        mavenCentral()
+    }
 }
 
 spotless {
@@ -61,6 +87,9 @@ dependencies {
 	annotationProcessor 'org.seasar.doma:doma:2.24.0'
 	implementation 'org.seasar.doma:doma:2.24.0'
 	compile group: 'org.seasar.doma.boot', name: 'doma-spring-boot-starter', version: '1.1.1'
+
+	// Original
+	compile project(":share")
 
 	// Library
 	compileOnly 'org.projectlombok:lombok'

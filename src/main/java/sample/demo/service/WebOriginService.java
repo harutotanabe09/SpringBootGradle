@@ -1,13 +1,14 @@
 package sample.demo.service;
 
 import static sample.demo.util.DomaUtils.createSelectOptions;
+
 import java.util.List;
 import java.util.Optional;
+import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
-import lombok.val;
 import sample.demo.dao.OriginDao;
 import sample.demo.entity.Pageable;
 import sample.demo.entity.WebOrigin;
@@ -15,8 +16,7 @@ import sample.demo.entity.WebOrigin;
 @Service
 public class WebOriginService extends BaseTransactionalService {
 
-  @Autowired
-  OriginDao originDao;
+  @Autowired OriginDao originDao;
 
   /**
    * 全件取得します。
