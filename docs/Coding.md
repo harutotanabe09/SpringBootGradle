@@ -45,12 +45,13 @@
 ## Swagger (API)
 ### swagger-ui.htmlで出力
 
+http://localhost:8079/swagger-ui.html
+
 ## コード整形
 ### gradle spotlessApplyを実行すると可能
 
 ## Javadoc
 ### gradle javadocを実行して表示
-
 
 ###  アプリケーションレイヤー
 
@@ -103,3 +104,20 @@ dependencies{
 }
 
 ★最後にbuild eclipseを実行
+
+#### Actuator
+
+プロパティで設定。以下URL実行。
+
+http://localhost:8079/actuator/heapdump
+
+Actuator
+
+curl 'http://localhost:8079/actuator/heapdump' -O
+
+#### Actuator & Prometheus
+
+Prometheus連携のためにGradleを追加。（io.micrometer）
+
+curl 'http://localhost:8079/actuator/prometheus' -i -X GET
+

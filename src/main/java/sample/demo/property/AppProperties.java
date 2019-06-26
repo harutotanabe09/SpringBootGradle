@@ -12,4 +12,7 @@ public class AppProperties {
 
   @Value("${app.timezone:UTC}")
   private String timezone;
+
+  @Value("${spring.datasource.url}")
+  private String dbname;
 }
