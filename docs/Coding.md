@@ -121,3 +121,17 @@ Prometheus連携のためにGradleを追加。（io.micrometer）
 
 curl 'http://localhost:8079/actuator/prometheus' -i -X GET
 
+
+### Dockerのネットワーク使い方
+
+・ネットワーク作成
+sudo docker network create -d bridge my-network
+
+・ネットワーク確認
+sudo docker network inspect my-network
+
+・ネットワーク追加（networkとnet-aliasが必要）
+sudo docker run --name myjava --rm -p 8080:8080 --network my-network --net-alias java my-java
+
+
+
