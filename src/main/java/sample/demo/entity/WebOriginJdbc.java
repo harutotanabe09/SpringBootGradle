@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class WebOriginJdbc {
-  String client_id;
+  Long clientid;
   String value;
 }

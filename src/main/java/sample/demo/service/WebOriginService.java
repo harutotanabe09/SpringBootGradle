@@ -3,6 +3,7 @@ package sample.demo.service;
 import static sample.demo.util.DomaUtils.createSelectOptions;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -14,6 +15,7 @@ import lombok.val;
 import sample.demo.dao.OriginDao;
 import sample.demo.entity.Pageable;
 import sample.demo.entity.WebOrigin;
+import sample.demo.entity.WebOriginJdbc;
 
 @Service
 public class WebOriginService extends BaseTransactionalService {
@@ -41,10 +43,18 @@ public class WebOriginService extends BaseTransactionalService {
     // 別のデータベース設定（MYSQL）をJDBCに設定
     List mysqlLists = mysql.queryForList("SELECT * FROM test.fine");
     for (Iterator it = mysqlLists.iterator(); it.hasNext();) {
-      System.out.println(it.next());
+      Map map = (Map) it.next();
+      createEntity(map);
     }
 
     return originDao.selectAll(new WebOrigin(), options);
+  }
+
+  private WebOriginJdbc createEntity(Map map) {
+    WebOriginJdbc jdbc = new WebOriginJdbc();
+    jdbc.setClientid((Long) map.get("number"));
+    jdbc.setValue((String) map.get("name"));
+    return jdbc;
   }
 
   /**
