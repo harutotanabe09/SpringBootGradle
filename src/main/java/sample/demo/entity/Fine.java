@@ -1,8 +1,8 @@
 package sample.demo.entity;
 
-import org.seasar.doma.Entity;
 import lombok.Getter;
 import lombok.Setter;
+import org.seasar.doma.Entity;
 
 @Entity
 @Getter
@@ -16,5 +16,4 @@ public class Fine extends DomaDtoImpl {
   String adress;
 
   String date;
-
 }

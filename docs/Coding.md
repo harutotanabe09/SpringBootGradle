@@ -124,6 +124,8 @@ curl 'http://localhost:8079/actuator/prometheus' -i -X GET
 
 ### Dockerのネットワーク使い方
 
+コンテナ間同士のネットワーク通信
+
 ・ネットワーク作成
 sudo docker network create -d bridge my-network
 
@@ -133,5 +135,8 @@ sudo docker network inspect my-network
 ・ネットワーク追加（networkとnet-aliasが必要）
 sudo docker run --name myjava --rm -p 8080:8080 --network my-network --net-alias java my-java
 
+・他コンテナの参照名は、net-aliasの名前になる。
 
+sudo docker run --name my-prometheus --rm -p 9090:9090 --network my-network --net-alias my-prometheus my-prometheus
+・DockerComponentはServiceで上記を自動生成する
 

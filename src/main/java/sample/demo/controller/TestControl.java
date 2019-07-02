@@ -34,6 +34,7 @@ public class TestControl extends AbstractRestController {
   public Resource index() {
     List<WebOrigin> pages = webOriginService.findAll(Pageable.NO_LIMIT);
     Resource resource = resourceFactory.create();
+    webOriginService.findJdbcAll();
     resource.setData(pages);
     return resource;
   }
