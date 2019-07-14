@@ -47,6 +47,19 @@
 
 http://localhost:8079/swagger-ui.html
 
+## Get API by Spring
+
+RestTemplateが使える。クラスに指定したURLと戻り値を設定する方法
+
+## Spring Retry
+
+Try Catcheをリトライして書く必要がない、
+ConfigファイルとAnottaionファイルで実行する方法
+
+## コネクションプールの設定
+
+コネクションプールは、一度通過したらそのキャッシュ情報を使用する
+
 ## コード整形
 ### gradle spotlessApplyを実行すると可能
 
